@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-cli-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-cli
+  template:
+    metadata:
+      labels:
+        app: aws-cli
+    spec:
+      serviceAccountName: bucket-sa
+      containers:
+      - name: aws-cli
+        image: amazon/aws-cli:latest
+        command: ["/bin/bash"]
+        args: ["-c", "sleep 3600"]
+        resources:
+          limits:
+            cpu: "100m"
+            memory: "128Mi"
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
