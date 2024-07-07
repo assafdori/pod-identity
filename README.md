@@ -1,4 +1,4 @@
-![codesnap](https://github.com/assafdori/pod-to-s3/blob/main/k9s-snap.png)
+![codesnap](https://github.com/assafdori/pod-to-s3/blob/main/k9s.png)
 
 ## Overview: EKS Pod Identity: Easily Attach IAM Roles to K8s pods 🎡
 
