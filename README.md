@@ -12,7 +12,7 @@
 - Docker
 - Kubernetes
 - EKS
-- IAM Services (roles, policies, IRSA)
+- IAM Services (roles, policies, pod-identity-attachment)
 - Terraform
 
 #### Steps 📝 :
