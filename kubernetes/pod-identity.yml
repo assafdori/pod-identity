@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-to-s3-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-to-s3-app
+  template:
+    metadata:
+      labels:
+        app: pod-to-s3-app
+    spec:
+      serviceAccountName: bucket-sa
+      containers:
+      - name: pod-to-s3-app
+        image: asixl/pod-to-s3:latest
+        imagePullPolicy: Always
+        env:
+        - name: AWS_REGION
+          value: us-east-1
